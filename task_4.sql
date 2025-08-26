@@ -1,5 +1,8 @@
 -- Switch to the correct database
 USE alx_book_store;
 
--- Print the full description of the "books" table
-SHOW CREATE TABLE books;
+-- Get full description of the books table using INFORMATION_SCHEMA
+SELECT COLUMN_NAME, COLUMN_TYPE, IS_NULLABLE, COLUMN_KEY, EXTRA
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_SCHEMA = 'alx_book_store'
+  AND TABLE_NAME = 'books';
